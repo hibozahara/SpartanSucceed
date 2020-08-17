@@ -1,0 +1,12 @@
+{
+  "name": "SpartanToots",
+  "displayName": "SpartanToots",
+  "expo": {
+    "name": "SpartanToots",
+    "slug": "SpartanToots",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
