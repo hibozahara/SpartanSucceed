@@ -10,7 +10,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#567FED" }}>
       <Image style={styles.logo} source={require('./images/ST.png')} />
-      <Text style={[styles.defaultStyle]} >Welcome to SpartanToots</Text>
+      <Text style={[styles.defaultStyle]} >Welcome to StutToots</Text>
 
       <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Log in")}>
         <Text style={styles.buttonText}> LOGIN</Text></TouchableOpacity>
