@@ -23,7 +23,7 @@ export default function HomeScreen({ navigation }) {
       }}
     >
       <Image style={styles.logo} source={require("../images/ST.png")} />
-      <Text style={[styles.defaultStyle]}>Welcome to StutToots</Text>
+      <Text style={[styles.defaultStyle]}>Welcome to iToots</Text>
 
       <TouchableOpacity
         style={styles.buttonContainer}

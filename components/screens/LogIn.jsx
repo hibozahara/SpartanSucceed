@@ -22,7 +22,7 @@ export default function LogIn({ navigation }) {
       }}
     >
       <Image style={styles.logo} source={require("../images/ST.png")} />
-      <Text style={[styles.defaultStyle]}>Login</Text>
+      
 
       <TextInput
         placeholder="Username"
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255,255,255,1.3)",
     marginTop: 15,
     marginBottom: 30,
-    color: "#FFF",
+    color: "#000",
     paddingHorizontal: 100,
     textAlignVertical: "top",
     borderRadius: 10,
