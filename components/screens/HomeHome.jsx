@@ -31,10 +31,12 @@ export default class HomeHome extends Component {
       <View style={styles.container}>
         <FlatList style={styles.list}
           data={this.state.data}
-          keyExtractor= {(item) => {
-            return item.id;
-          }}
-          ItemSeparatorComponent={() => {
+          //keyExtractor= {(item) => {
+            //return item.id.toString;
+            
+            keyExtractor={(item, index) => String(index)}
+          
+            ItemSeparatorComponent={() => {
             return (
               <View style={styles.separator}/>
             )
