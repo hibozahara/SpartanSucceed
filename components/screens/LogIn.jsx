@@ -10,8 +10,10 @@ import {
 } from "react-native";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import {AuthContext} from './AuthCon';
 
 export default function LogIn({ navigation }) {
+  const {signIn} = React.useContext(AuthContext);
   return (
     <View
       style={{
@@ -38,7 +40,7 @@ export default function LogIn({ navigation }) {
 
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={() => navigation.navigate("Home Home")}
+        onPress={() => signIn()}
       >
         <Text style={styles.buttonText}> LOGIN</Text>
       </TouchableOpacity>
