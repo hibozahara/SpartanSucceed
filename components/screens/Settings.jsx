@@ -1,11 +1,99 @@
 import React from 'react';
-import { Text} from 'react-native';
+import { Image, View, StyleSheet, Alert} from "react-native";
+import SettingsList from 'react-native-settings-list';
+import UserAvatar from 'react-native-user-avatar';
 
-const Settings = () => {
-  return  <Text>Setting Screen</Text>;
-     
-};
+//import Component from 'react';
 
-//const styles = StyleSheet.create({});
+class Settings extends React.Component {
 
-export default Settings;
+constructor(){
+  super();
+  this.onValueChange = this.onValueChange.bind(this);
+  this.state = {
+    switchValue: false,
+  };
+  
+}
+render() {
+
+  return (
+    <View style={{flex:1}}>
+      <View style={{backgroundColor:'#EFEFF4'}}>
+
+      <UserAvatar width={5} size={50} name="Test" bgColor="#000" />
+
+        <SettingsList borderColor='#c8c7cc' defaultItemSize={60}>
+          <SettingsList.Header headerStyle={{marginTop:20}}/>
+          
+          <SettingsList.Item
+            title='Name'
+            titleInfo='Jane Doe'
+            titleInfoStyle={styles.titleInfoStyle}
+            
+          />
+          <SettingsList.Item
+            title='Email'
+            titleInfo='janedoe333@gmail.com'
+            titleInfoStyle={styles.titleInfoStyle}
+            onPress={() => Alert.alert('Email is not editable')}
+          />
+          <SettingsList.Item
+            title='Subjects'
+            titleInfo='CS 151, CMPE 102, MATH 123A, CS 149'
+            titleInfoStyle={styles.titleInfoStyle}
+          />
+          <SettingsList.Header headerStyle={{marginTop:20}}/>
+          
+          <SettingsList.Item
+            hasSwitch={true}
+            switchState={this.state.switchValue}
+            switchOnValueChange={this.onValueChange}
+            hasNavArrow={false}
+            title='Tutor Mode'
+          />
+          
+          <SettingsList.Item
+            hasSwitch={true}
+            switchState={this.state.switchValue}
+            switchOnValueChange={this.onValueChange}
+            hasNavArrow={false}
+            title='Push Notifications'
+          />
+          
+          <SettingsList.Header headerStyle={{marginTop:85}}/>
+         
+          <SettingsList.Item
+           icon={<Image style={styles.imageStyle} source={require("../images/ST.png")}/>}
+            title='Logout'
+            //onPress={() => navigation.navigate("Log in")}
+            onPress={() => Alert.alert("Are you sure?", "Logging out will require you to reenter your credentials.",
+            [ {text: 'Logout', style: 'destructive'}, {text: 'Cancel'},
+            ],{cancelable: false}
+            )}
+          />
+        </SettingsList>
+      </View>
+    </View>
+  );
+}
+onValueChange(value){
+  this.setState({switchValue: value});
+}
+}
+
+const styles = StyleSheet.create({
+  imageStyle:{
+    marginLeft:5,
+    alignSelf:'center',
+    height:50,
+    width:70
+  },
+  titleInfoStyle:{
+    fontSize:16,
+    color: '#000000'
+  }
+});
+
+
+export default Settings 

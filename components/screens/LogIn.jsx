@@ -44,6 +44,7 @@ export default function LogIn({ navigation }) {
       >
         <Text style={styles.buttonText}> LOGIN</Text>
       </TouchableOpacity>
+      <Text style={styles.plaintxt}> Forgot Password?</Text>
     </View>
   );
 }
@@ -90,5 +91,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 100,
     textAlignVertical: "top",
     borderRadius: 10,
+  },
+  plaintxt: {
+    height: 40,
+    marginTop: 15,
+    marginBottom: 30,
+    color: "#fff",
+    paddingHorizontal: 100,
+    textAlignVertical: "top",
+    fontWeight: "bold"
   },
 });
