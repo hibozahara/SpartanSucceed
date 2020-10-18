@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, View, StyleSheet, Alert} from "react-native";
+import { Image, View, StyleSheet, Alert, ScrollView} from "react-native";
 import SettingsList from 'react-native-settings-list';
-import UserAvatar from 'react-native-user-avatar';
+import { Avatar } from 'react-native-paper';
 
 //import Component from 'react';
 
@@ -18,10 +18,12 @@ constructor(){
 render() {
 
   return (
+    <ScrollView>
     <View style={{flex:1}}>
       <View style={{backgroundColor:'#EFEFF4'}}>
 
-      <UserAvatar width={5} size={50} name="Test" bgColor="#000" />
+      <Avatar.Image style={styles.iconData} size={240} source={require("../images/prof.png")} />
+      
 
         <SettingsList borderColor='#c8c7cc' defaultItemSize={60}>
           <SettingsList.Header headerStyle={{marginTop:20}}/>
@@ -61,7 +63,7 @@ render() {
             title='Push Notifications'
           />
           
-          <SettingsList.Header headerStyle={{marginTop:85}}/>
+          <SettingsList.Header headerStyle={{marginTop:75}}/>
          
           <SettingsList.Item
            icon={<Image style={styles.imageStyle} source={require("../images/ST.png")}/>}
@@ -75,6 +77,7 @@ render() {
         </SettingsList>
       </View>
     </View>
+    </ScrollView>
   );
 }
 onValueChange(value){
@@ -92,6 +95,12 @@ const styles = StyleSheet.create({
   titleInfoStyle:{
     fontSize:16,
     color: '#000000'
+  },
+  iconData:{
+    //width:15,
+    //height:15,
+    marginTop:5,
+    marginLeft:80
   }
 });
 
